@@ -27,7 +27,6 @@ class UpdateProfileRequest extends FormRequest
         return [
             'nama' => ['required', 'string'],
             'asal_kota' => ['required', 'string'],
-            'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($this->user()->uuid, 'uuid')],
             'password' => ['min:6', 'nullable'],
         ];
     }
