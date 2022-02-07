@@ -24,7 +24,10 @@ class LoginController extends Controller
             return response()->json(['error' => 'Unauthorized']);
         }
 
-        return response()->json(compact('token'));
+        return response()->json([
+            'status' => 200,
+            'token' => $token
+        ]);
     }
 
     public function logout()
